@@ -1,1 +1,2 @@
-home 
+home="casa"
+xd=!23 
