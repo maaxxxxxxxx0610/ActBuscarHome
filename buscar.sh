@@ -1,8 +1,8 @@
 
 
 
-if [ $# -ne 1 ]; then 
- echo "no pasaste nd o pasaste mas de un archivo pndj" 
+if [ $# -lt 1 ] || [ $# -gt 2 ]; then 
+ echo "no pasaste nd o pasaste mas de un archivo pndj y mete archivo o no no se xd" 
 
  exit 1
 fi
@@ -10,17 +10,31 @@ fi
 
 arch=$1
 
-if [ ! -d "$arch" ]; then 
+if [ -z "$2" ]; then
 
- echo "no hay nada xd"
+ tray="/"
 
- exit 1
+else
 
-fi 
+ tray=$2
 
-r=$(grep -rl "home" "$arch" )
+    if [ ! -d "$tray" ]; then 
+      echo "no hay nada de directorios existentes pndjo"
+     exit 1
+    fi
+fi
 
-echo "$r"
+
+
+
+r=$(grep -rl "$arch" "$tray" 2>/dev/null )
+
+
+if [ -z "$r" ]; then 
+ echo "no hay nada papa ff"
+else
+ echo "$r"
+fi
 
 
 
