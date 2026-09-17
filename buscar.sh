@@ -12,7 +12,7 @@ arch=$1
 
 if [ -z "$2" ]; then
 
- tray="/"
+ tray="."
 
 else
 
