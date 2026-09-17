@@ -1,4 +1,4 @@
-arch=$1
+
 
 
 if [ $# -ne 1 ]; then 
@@ -8,12 +8,21 @@ if [ $# -ne 1 ]; then
 fi
 
 
-r=$(grep -rl "home" arch )
+arch=$1
 
-
-
-if [ ! -d "arch"]; then 
+if [ ! -d "$arch" ]; then 
 
  echo "no hay nada xd"
 
+ exit 1
+
 fi 
+
+r=$(grep -rl "home" "$arch" )
+
+echo "$r"
+
+
+
+
+
