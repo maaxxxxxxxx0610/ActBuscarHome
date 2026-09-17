@@ -10,3 +10,10 @@ fi
 
 r=$(grep -rl "home" arch )
 
+
+
+if [ ! -d "arch"]; then 
+
+ echo "no hay nada xd"
+
+fi 
