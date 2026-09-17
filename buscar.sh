@@ -10,7 +10,7 @@ fi
 
 arch=$1
 
-if [ ! -d "arch" ]; then 
+if [ ! -d "$arch" ]; then 
 
  echo "no hay nada xd"
 
@@ -18,7 +18,7 @@ if [ ! -d "arch" ]; then
 
 fi 
 
-r=$(grep -rl "home" arch )
+r=$(grep -rl "home" "$arch" )
 
 echo "$r"
 
